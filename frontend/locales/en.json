@@ -1,6 +1,6 @@
 {
     "nav": {
-        "logo": "ELI6 Movies",
+        "logo": "KRMovies",
         "home": "Home",
         "movies": "Movies",
         "tvshows": "TV Shows",
@@ -200,7 +200,7 @@
         "submit": "Submit",
         "profile": "Profile",
         "settings": "Settings",
-        "logo": "ELI6 MOVIES",
+        "logo": "KRMovies",
         "loginTab": "Sign In",
         "registerTab": "Sign Up",
         "signOut": "Sign Out",

@@ -1,6 +1,6 @@
 {
     "nav": {
-        "logo": "ELI6 Movies",
+        "logo": "KRMovies",
         "home": "Главная",
         "movies": "Фильмы",
         "tvshows": "Сериалы",
@@ -200,7 +200,7 @@
         "submit": "Отправить",
         "profile": "Профиль",
         "settings": "Настройки",
-        "logo": "ELI6 MOVIES",
+        "logo": "KRMovies",
         "loginTab": "Войти",
         "registerTab": "Регистрация",
         "signIn": "Войти",

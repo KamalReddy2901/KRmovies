@@ -2210,8 +2210,8 @@
             const heroDescription = document.getElementById('heroDescription');
             heroTitle.textContent = title;
             heroDescription.textContent = overview;
-            document.title = title + ' — ELI6 Movies';
-            updateOgTags(title + ' — ELI6 Movies', overview, image || '');
+            document.title = title + ' — KRMovies';
+            updateOgTags(title + ' — KRMovies', overview, image || '');
             document.getElementById('heroRating').textContent = rating;
             document.getElementById('heroYear').textContent = year;
             document.getElementById('heroDuration').textContent = episodes;
@@ -2290,11 +2290,11 @@
 
             heroTitle.textContent = title;
             heroDescription.textContent = overview;
-            document.title = title + ' — ELI6 Movies';
+            document.title = title + ' — KRMovies';
             const _ogImage = contentData.backdrop_path
                 ? `https://image.tmdb.org/t/p/w1280${contentData.backdrop_path}`
                 : (contentData.poster_path ? `https://image.tmdb.org/t/p/w500${contentData.poster_path}` : '');
-            updateOgTags(title + ' — ELI6 Movies', overview, _ogImage);
+            updateOgTags(title + ' — KRMovies', overview, _ogImage);
 
             document.getElementById('heroRating').textContent = rating;
             document.getElementById('heroYear').textContent = year;
@@ -2457,7 +2457,7 @@
         const _CONTENT_KEY    = (type || 'movie') + ':' + id;
 
 
-        const _SC = 'eli6.srvCache', _SC_TTL = 604800000;
+        const _SC = 'krmovies.srvCache', _SC_TTL = 604800000;
         function _scLoad(k) {
             try {
                 const c = JSON.parse(localStorage.getItem(_SC) || '{}'), e = c[k];
@@ -3015,7 +3015,7 @@
 
                     const episodesGrid = document.getElementById('episodesGrid');
                     if (episodes && episodes.length > 0) {
-                        const psKey = 'eli6.ps.tv.' + id;
+                        const psKey = 'krmovies.ps.tv.' + id;
                         let epProgress = {};
                         try {
                             const ps = JSON.parse(localStorage.getItem(psKey) || 'null');
@@ -3997,7 +3997,7 @@
         }
 
 
-        const PS_KEY    = 'eli6.ps.' + type + '.' + id;
+        const PS_KEY    = 'krmovies.ps.' + type + '.' + id;
         const PS_EXPIRY = 90 * 24 * 60 * 60 * 1000;
 
         function loadPlayState() {
@@ -4206,7 +4206,7 @@
 
         }
         // Listen for language changes and reload content metadata
-        window.addEventListener('eli6.langChanged', async function () {
+        window.addEventListener('krmovies.langChanged', async function () {
             await loadContentDetails();
         });
 

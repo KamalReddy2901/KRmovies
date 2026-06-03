@@ -1,4 +1,4 @@
-// ELI6 Movies — movies browse page
+// KRMovies — movies browse page
 
 (function () {
   var API_URL  = window.API_BASE_URL  || '';
@@ -178,11 +178,11 @@
     window.renderTopNav('movies');
     window.renderBottomNav('movies');
     renderPage();
-    document.addEventListener('eli6.themeChanged', function () {
+    document.addEventListener('krmovies.themeChanged', function () {
       window.renderTopNav('movies');
       window.renderBottomNav('movies');
     });
-    window.addEventListener('eli6.langChanged', function () {
+    window.addEventListener('krmovies.langChanged', function () {
       renderPage();
     });
   });

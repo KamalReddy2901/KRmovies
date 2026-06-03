@@ -34,7 +34,7 @@
         { "title": "Kinogo films scraping integration", "status": "planned" },
         { "title": "Favicon generation", "status": "planned" },
         { "title": "Entry mini animation", "status": "planned" },
-        { "title": "Security hardening: backend moved to /opt/eli6_backend", "status": "done" },
+        { "title": "Security hardening: backend moved to /opt/krmovies_backend", "status": "done" },
         {
             "title": "Security: env secrets, rate limiting, headers, CORS tightened",
             "status": "done"

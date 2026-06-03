@@ -1,4 +1,4 @@
-// ELI6 Movies — TV shows browse page
+// KRMovies — TV shows browse page
 
 (function () {
   var TMDB_URL = window.TMDB_PROXY_URL || ((window.API_BASE_URL || '') + '/tmdb');

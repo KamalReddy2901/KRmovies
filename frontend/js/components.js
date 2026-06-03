@@ -1,4 +1,4 @@
-// ELI6 Movies — shared vanilla JS component renderers
+// KRMovies — shared vanilla JS component renderers
 // All components read CSS vars from the theme system (theme.js + theme.css + design.css)
 
 (function (window) {
@@ -54,7 +54,7 @@
 
   function _getCurrentLang() {
     if (window.i18n && window.i18n.currentLanguage) return window.i18n.currentLanguage;
-    var m = document.cookie.match(/(?:^|;\s*)eli6_language=([a-z]+)/);
+    var m = document.cookie.match(/(?:^|;\s*)krmovies_language=([a-z]+)/);
     return (m && m[1]) || "en";
   }
 
@@ -141,7 +141,7 @@
         if (window.i18n) {
           window.i18n.changeLanguage(l.code);
         } else {
-          document.cookie = "eli6_language=" + l.code + "; path=/; max-age=31536000";
+          document.cookie = "krmovies_language=" + l.code + "; path=/; max-age=31536000";
           window.location.reload();
         }
       });
@@ -171,7 +171,7 @@
     mount.appendChild(nav);
 
     // Re-render on theme change so logo updates
-    document.addEventListener("eli6.themeChanged", function () { renderTopNav(active); }, { once: true });
+    document.addEventListener("krmovies.themeChanged", function () { renderTopNav(active); }, { once: true });
   }
 
 
@@ -715,7 +715,7 @@
       const _base = (window.location.origin + window.location.pathname).replace(/[^/]*$/, "");
       const _shareUrl = _base + "player.html?id=" + (item.tmdb_id || item.id) + "&type=" + kind;
       if (navigator.share) {
-        navigator.share({ title: item.title || item.name || "ELI6 Movies", url: _shareUrl }).catch(function () {});
+        navigator.share({ title: item.title || item.name || "KRMovies", url: _shareUrl }).catch(function () {});
       } else {
         navigator.clipboard.writeText(_shareUrl).then(function () {
           showToast("Link copied!");
@@ -925,7 +925,7 @@
 
     const top = el("div", "footer__top");
     const copy = el("span");
-    copy.textContent = "© 2026 ELI6 Movies";
+    copy.textContent = "© 2026 KRMovies";
     const disc = el("span");
     disc.textContent = "This site does not host any files. All content is provided by non-affiliated third parties.";
     top.appendChild(copy);
@@ -945,7 +945,7 @@
     });
 
     const bottom = el("div", "footer__bottom");
-    bottom.textContent = "ELI6 Movies is an independent aggregator and does not produce, host, or distribute any media content. All trademarks belong to their respective owners.";
+    bottom.textContent = "KRMovies is an independent aggregator and does not produce, host, or distribute any media content. All trademarks belong to their respective owners.";
 
     footer.appendChild(top);
     footer.appendChild(links);
@@ -957,7 +957,7 @@
 
 
   function renderCookieBanner() {
-    if (localStorage.getItem("eli6.cookies.accepted")) return;
+    if (localStorage.getItem("krmovies.cookies.accepted")) return;
 
     const banner = el("div", "cookie-banner");
 
@@ -970,7 +970,7 @@
     acceptBtn.textContent = "Accept";
     acceptBtn.style.cssText = "padding:8px 20px;font-size:13px";
     acceptBtn.addEventListener("click", function () {
-      localStorage.setItem("eli6.cookies.accepted", "1");
+      localStorage.setItem("krmovies.cookies.accepted", "1");
       banner.style.transition = "opacity 200ms";
       banner.style.opacity = "0";
       setTimeout(function () { banner.remove(); }, 210);
@@ -1076,7 +1076,7 @@
   }
 
   function renderAdBlockPrompt() {
-    var KEY = 'eli6.adblock_seen';
+    var KEY = 'krmovies.adblock_seen';
     try { if (localStorage.getItem(KEY)) return; } catch (e) {}
 
     detectAdBlock().then(function (hasBlock) {

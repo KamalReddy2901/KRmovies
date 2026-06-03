@@ -1,5 +1,5 @@
 /**
- * ELI6 Movies Internationalization (i18n) System
+ * KRMovies Internationalization (i18n) System
  * Supports English, Italian, and Russian languages
  * Uses LibreTranslate for dynamic content translation
  */
@@ -78,7 +78,7 @@ class I18nManager {
      * Set language cookie
      */
     setLanguageCookie(lang) {
-        document.cookie = `eli6_language=${lang}; path=/; max-age=31536000`; // 1 year
+        document.cookie = `krmovies_language=${lang}; path=/; max-age=31536000`; // 1 year
     }
 
     /**
@@ -88,7 +88,7 @@ class I18nManager {
         const cookies = document.cookie.split(';');
         for (let cookie of cookies) {
             const [name, value] = cookie.trim().split('=');
-            if (name === 'eli6_language') {
+            if (name === 'krmovies_language') {
                 return value;
             }
         }

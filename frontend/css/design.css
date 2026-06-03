@@ -1,4 +1,4 @@
-/* ELI6 Movies — full design system.
+/* KRMovies — full design system.
    All theme-able values come from CSS vars in theme.css, set at runtime by theme.js */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -1744,7 +1744,7 @@ html[data-theme="marquee"] .live-modal__player { border-radius: 0; }
 }
 
 /* skeleton loaders */
-@keyframes eli6-shimmer {
+@keyframes krmovies-shimmer {
   0%   { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
@@ -1754,7 +1754,7 @@ html[data-theme="marquee"] .live-modal__player { border-radius: 0; }
     rgba(255,255,255,0.12) 50%,
     rgba(255,255,255,0.04) 75%);
   background-size: 200% 100%;
-  animation: eli6-shimmer 1.6s linear infinite;
+  animation: krmovies-shimmer 1.6s linear infinite;
   border-radius: 4px;
   display: block;
 }

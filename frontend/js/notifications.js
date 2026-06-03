@@ -2,24 +2,24 @@
 (function () {
     const CHANGELOG_URL = 'changelog.json';
     const CHANGELOG_PAGE = 'changelog.html';
-    const STORAGE_KEY_VERSION = 'eli6_changelog_last_seen_version';
+    const STORAGE_KEY_VERSION = 'krmovies_changelog_last_seen_version';
 
     function ensureStyles() {
-        if (document.getElementById('eli6-notifications-style')) return;
+        if (document.getElementById('krmovies-notifications-style')) return;
         const style = document.createElement('style');
-        style.id = 'eli6-notifications-style';
+            style.id = 'krmovies-notifications-style';
         style.textContent = `
 			.notif-badge { position: absolute; top: -2px; right: -2px; background: #e50914; color: #fff; border-radius: 10px; padding: 0 6px; font-size: 11px; line-height: 16px; height: 16px; min-width: 16px; display: none; align-items: center; justify-content: center; font-weight: 700; box-shadow: 0 0 0 2px rgba(0,0,0,0.6); }
 			.notif-dot { position: absolute; top: 0; right: 0; width: 8px; height: 8px; background: #e50914; border-radius: 50%; box-shadow: 0 0 0 2px rgba(0,0,0,0.6); display: none; }
 			.notif-anchor { position: relative; }
-			#eli6-popover { position: fixed; z-index: 10000; min-width: 280px; max-width: 360px; color: #fff; background: rgba(20,20,20,0.98); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.6); backdrop-filter: blur(10px); display: none; }
-			#eli6-popover header { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
-			#eli6-popover .content { max-height: 320px; overflow: auto; }
-			#eli6-popover .item { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px; }
-			#eli6-popover .item:last-child { border-bottom: none; }
-			#eli6-popover .item .status { font-size: 11px; opacity: 0.8; }
-			#eli6-popover footer { padding: 10px 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: flex-end; }
-			#eli6-popover a.view-all { color: #e50914; text-decoration: none; font-weight: 700; }
+                #krmovies-popover { position: fixed; z-index: 10000; min-width: 280px; max-width: 360px; color: #fff; background: rgba(20,20,20,0.98); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.6); backdrop-filter: blur(10px); display: none; }
+                #krmovies-popover header { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+                #krmovies-popover .content { max-height: 320px; overflow: auto; }
+                #krmovies-popover .item { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px; }
+                #krmovies-popover .item:last-child { border-bottom: none; }
+                #krmovies-popover .item .status { font-size: 11px; opacity: 0.8; }
+                #krmovies-popover footer { padding: 10px 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: flex-end; }
+                #krmovies-popover a.view-all { color: #e50914; text-decoration: none; font-weight: 700; }
 		`;
         document.head.appendChild(style);
     }
@@ -58,16 +58,16 @@
     }
 
     function showPopover(anchor, changelog) {
-        let pop = document.getElementById('eli6-popover');
+        let pop = document.getElementById('krmovies-popover');
         if (!pop) {
             pop = document.createElement('div');
-            pop.id = 'eli6-popover';
+            pop.id = 'krmovies-popover';
             pop.innerHTML = `
 				<header>
 					<span>Whats New</span>
-					<button id="eli6-popover-close" style="background:none;border:none;color:#fff;cursor:pointer;font-size:18px;">×</button>
+                    <button id="krmovies-popover-close" style="background:none;border:none;color:#fff;cursor:pointer;font-size:18px;">×</button>
 				</header>
-				<div class="content" id="eli6-popover-content"></div>
+                <div class="content" id="krmovies-popover-content"></div>
 				<footer>
 					<a class="view-all" href="${CHANGELOG_PAGE}">View all changes</a>
 				</footer>
@@ -79,7 +79,7 @@
         const left = Math.min(Math.max(8, rect.right - 320), window.innerWidth - 8 - 320);
         pop.style.top = `${Math.round(top)}px`;
         pop.style.left = `${Math.round(left)}px`;
-        const content = pop.querySelector('#eli6-popover-content');
+        const content = pop.querySelector('#krmovies-popover-content');
         content.innerHTML = '';
         const recent = (changelog.items || []).slice(0, 6);
         recent.forEach((i) => {
@@ -95,7 +95,7 @@
             content.appendChild(div);
         });
         pop.style.display = 'block';
-        const closeBtn = document.getElementById('eli6-popover-close');
+        const closeBtn = document.getElementById('krmovies-popover-close');
         closeBtn.onclick = () => hidePopover();
         setTimeout(() => {
             function onDocClick(ev) {
@@ -109,7 +109,7 @@
     }
 
     function hidePopover() {
-        const pop = document.getElementById('eli6-popover');
+        const pop = document.getElementById('krmovies-popover');
         if (pop) pop.style.display = 'none';
     }
 

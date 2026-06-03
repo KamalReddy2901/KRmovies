@@ -1,4 +1,4 @@
-// ELI6 Movies — search page (v2)
+// KRMovies — search page (v2)
 // Uses search/multi for typeahead + per-filter dedicated endpoints for accuracy.
 
 (function () {

@@ -154,8 +154,8 @@ body {
     border-right: 1px solid #222;
 }
 
-.eli6-logo,
-.eli6-logo .eli6-accent {
+.krmovies-logo,
+.krmovies-logo .krmovies-accent {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 2.6rem;
     font-weight: 900;
@@ -164,8 +164,7 @@ body {
     text-shadow: 0 0 6px #e5091470;
     margin-bottom: 32px;
 }
-
-.eli6-accent {
+.krmovies-accent {
     letter-spacing: 2px;
     /* No extra font-size or color, inherit from parent */
 }

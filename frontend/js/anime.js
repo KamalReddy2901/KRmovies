@@ -1,4 +1,4 @@
-// ELI6 Movies — anime browse page
+// KRMovies — anime browse page
 
 (function () {
   var TMDB_URL = window.TMDB_PROXY_URL || ((window.API_BASE_URL || '') + '/tmdb');
@@ -94,11 +94,11 @@
     window.renderTopNav('anime');
     window.renderBottomNav('anime');
     renderPage();
-    document.addEventListener('eli6.themeChanged', function () {
+    document.addEventListener('krmovies.themeChanged', function () {
       window.renderTopNav('anime');
       window.renderBottomNav('anime');
     });
-    window.addEventListener('eli6.langChanged', function () {
+    window.addEventListener('krmovies.langChanged', function () {
       renderPage();
     });
   });
