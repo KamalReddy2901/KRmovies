@@ -49,7 +49,7 @@
   async function renderPage() {
     var mount = document.getElementById('rows-mount');
     if (!mount) return;
-    mount.innerHTML = '<div class="e6-loading"><div class="e6-spinner"></div><span>' + tr('common.loading', 'Loading…') + '</span></div>';
+    mount.innerHTML = '<div class="krmovies-loading"><div class="krmovies-spinner"></div><span>' + tr('common.loading', 'Loading…') + '</span></div>';
 
     var lang = (window.i18n && window.i18n.getTMDBLanguage) ? window.i18n.getTMDBLanguage() : 'en-US';
 

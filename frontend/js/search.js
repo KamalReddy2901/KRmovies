@@ -281,7 +281,7 @@
     if (!mount) return;
 
     if (countEl) countEl.textContent = person.name + ' — filmography';
-    mount.innerHTML = '<div class="e6-loading"><div class="e6-spinner"></div><span>Loading…</span></div>';
+    mount.innerHTML = '<div class="krmovies-loading"><div class="krmovies-spinner"></div><span>Loading…</span></div>';
 
     var data = await _get(TMDB_URL + '/person/' + person.id + '/combined_credits?language=' + _lang());
 
@@ -535,7 +535,7 @@
     var countEl = document.getElementById('search-count');
     if (!mount) return;
 
-    mount.innerHTML = '<div class="e6-loading"><div class="e6-spinner"></div><span>Searching…</span></div>';
+    mount.innerHTML = '<div class="krmovies-loading"><div class="krmovies-spinner"></div><span>Searching…</span></div>';
 
     var result = await _doFetch(q, 1);
     _totalPages = result.total_pages;
@@ -564,7 +564,7 @@
     if (countEl) countEl.textContent = '';
     _currentQuery = '';
     closeTypeahead();
-    mount.innerHTML = '<div class="e6-loading"><div class="e6-spinner"></div></div>';
+    mount.innerHTML = '<div class="krmovies-loading"><div class="krmovies-spinner"></div></div>';
 
     var tData = await _fetchTrending();
     var tMovies = (tData[0].results || []).map(_normMovie);

@@ -154,10 +154,10 @@ async function initPage() {
   rowsMnt.innerHTML = '';
 
   const loadingDiv = document.createElement('div');
-  loadingDiv.className = 'e6-loading';
+  loadingDiv.className = 'krmovies-loading';
   const loadingSpan = document.createElement('span');
   loadingSpan.textContent = 'Loading…';
-  loadingDiv.innerHTML = '<div class="e6-spinner"></div>';
+  loadingDiv.innerHTML = '<div class="krmovies-spinner"></div>';
   loadingDiv.appendChild(loadingSpan);
   rowsMnt.appendChild(loadingDiv);
 

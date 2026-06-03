@@ -576,7 +576,7 @@
 
   function closePicker(backdrop) {
     if (!backdrop.parentNode) return;
-    backdrop.style.animation = 'e6-fade-in 150ms ease reverse forwards';
+    backdrop.style.animation = 'krmovies-fade-in 150ms ease reverse forwards';
     setTimeout(function () { if (backdrop.parentNode) backdrop.parentNode.removeChild(backdrop); }, 150);
   }
   function openPicker(title, options, current, onSelect) {

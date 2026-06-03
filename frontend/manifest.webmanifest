@@ -11,7 +11,7 @@
   "categories": ["sports", "entertainment"],
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/img/favicon-krmovies.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

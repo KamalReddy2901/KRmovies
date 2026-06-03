@@ -13,7 +13,7 @@ function _mlIsLoggedIn() {
 
 function showMyListToast(message, type, undoCallback) {
     if (!undoCallback) {
-        // Delegate to the shared e6-toast system
+        // Delegate to the shared krmovies-toast system
         if (typeof window.showToast === 'function') {
             window.showToast(message, type);
         }

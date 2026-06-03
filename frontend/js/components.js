@@ -416,7 +416,7 @@
 
       // art
       const art = el("div", "hero__art");
-      art.style.animation = "e6-fade-in 600ms ease";
+      art.style.animation = "krmovies-fade-in 600ms ease";
 
       if (item.backdrop_path) {
         const img = el("div", "hero__art-img");
@@ -991,9 +991,9 @@
   let _toastTimer = null;
 
   function showToast(message, type) {
-    let toast = document.querySelector(".e6-toast");
+    let toast = document.querySelector(".krmovies-toast");
     if (!toast) {
-      toast = el("div", "e6-toast");
+      toast = el("div", "krmovies-toast");
       document.body.appendChild(toast);
     }
     toast.textContent = message;

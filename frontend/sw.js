@@ -14,7 +14,7 @@ var SHELL_ASSETS = [
   '/locales/it.json',
   '/locales/ru.json',
   '/manifest.webmanifest',
-  '/favicon.svg'
+  '/img/favicon-krmovies.svg'
 ];
 
 self.addEventListener('install', function (event) {
