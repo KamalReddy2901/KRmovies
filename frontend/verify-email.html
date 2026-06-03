@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verify Email — ELI6 Movies</title>
+  <title>Verify Email — KRmovies</title>
   <script>
     (function(){
-      try { var p=JSON.parse(localStorage.getItem('eli6.prefs')||'{}'); document.documentElement.dataset.theme=p.theme||'pulse'; document.documentElement.dataset.mode=p.mode||'dark'; }
+      try { var p=JSON.parse(localStorage.getItem('krmovies.prefs')||'{}'); document.documentElement.dataset.theme=p.theme||'pulse'; document.documentElement.dataset.mode=p.mode||'dark'; }
       catch(e){ document.documentElement.dataset.theme='pulse'; document.documentElement.dataset.mode='dark'; }
     })();
   </script>
@@ -31,7 +31,7 @@
 <body>
   <div class="auth-wrap">
     <div class="auth-card">
-      <div class="auth-logo">ELI<span>6</span>.</div>
+      <div class="auth-logo">KRMovies</div>
       <div id="content">
         <div class="spinner"></div>
         <div class="sub">Verifying your email…</div>
@@ -40,7 +40,7 @@
   </div>
   <script src="js/config.js"></script>
   <script>
-    const API   = (window.API_BASE_URL || 'https://eli6movies.onrender.com/api').replace(/\/+$/, '');
+    const API   = (window.API_BASE_URL || 'https://krmovies.onrender.com/api').replace(/\/+$/, '');
     const token = new URLSearchParams(window.location.search).get('token');
     const el    = document.getElementById('content');
 

@@ -84,11 +84,11 @@
 
   // === TEAM-IMG CACHE (sessionStorage, v2 after property-name fix) ===
   var _teamImgCache = null;
-  var TEAM_CACHE_KEY = 'eli6.teamImgs.v2';
+  var TEAM_CACHE_KEY = 'krmovies.teamImgs.v2';
   function teamImgCache() {
     if (!_teamImgCache) {
       try { _teamImgCache = JSON.parse(sessionStorage.getItem(TEAM_CACHE_KEY) || '{}'); } catch (e) { _teamImgCache = {}; }
-      try { sessionStorage.removeItem('eli6.teamImgs'); } catch (e) {}
+      try { sessionStorage.removeItem('krmovies.teamImgs'); } catch (e) {}
     }
     return _teamImgCache;
   }
@@ -222,8 +222,8 @@
   }
   function saveJSON(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
 
-  var favorites = loadJSON('eli6.live.favorites', []);       // array of team names (lowercase)
-  var sourceVotes = loadJSON('eli6.live.sourceVotes', {});   // url → { up:n, down:n }
+  var favorites = loadJSON('krmovies.live.favorites', []);       // array of team names (lowercase)
+  var sourceVotes = loadJSON('krmovies.live.sourceVotes', {});   // url → { up:n, down:n }
 
   // === FAVORITES ===
   function isFavoriteTeam(teamName) {
@@ -235,7 +235,7 @@
     var i = favorites.indexOf(t);
     if (i === -1) favorites.push(t);
     else favorites.splice(i, 1);
-    saveJSON('eli6.live.favorites', favorites);
+    saveJSON('krmovies.live.favorites', favorites);
   }
   function matchHasFavorite(m) {
     if (!favorites.length) return false;
@@ -257,7 +257,7 @@
   function voteSource(url, dir) {
     var v = sourceVotes[url] || (sourceVotes[url] = { up: 0, down: 0 });
     if (dir === 'up') v.up++; else v.down++;
-    saveJSON('eli6.live.sourceVotes', sourceVotes);
+    saveJSON('krmovies.live.sourceVotes', sourceVotes);
   }
   function sortSourcesByVotes(sources) {
     return sources.slice().sort(function (a, b) {
@@ -1246,7 +1246,7 @@
     startRefreshCountdown();
 
     // re-render dynamic text when user switches language
-    window.addEventListener('eli6.langChanged', function () {
+    window.addEventListener('krmovies.langChanged', function () {
       renderDatePicker(); renderSearch(); renderRefreshBar();
       renderTabs(); renderLeagueFilter(); renderMatches();
     });

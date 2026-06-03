@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ELI6 Movies — Free Streaming</title>
+  <title>KRmovies — Free Streaming</title>
   <meta name="description" content="Stream the latest movies, TV shows and anime online for free." />
 
   <!-- Anti-FOUC: apply saved theme before first paint -->
   <script>
     (function(){
       try {
-        var p = JSON.parse(localStorage.getItem('eli6.prefs') || '{}');
+        var p = JSON.parse(localStorage.getItem('krmovies.prefs') || '{}');
         document.documentElement.dataset.theme = p.theme || 'pulse';
         document.documentElement.dataset.mode  = p.mode  || 'dark';
       } catch(e) {

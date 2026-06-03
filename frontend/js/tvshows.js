@@ -163,11 +163,11 @@
     window.renderTopNav('tvshows');
     window.renderBottomNav('tvshows');
     renderPage();
-    document.addEventListener('eli6.themeChanged', function () {
+    document.addEventListener('krmovies.themeChanged', function () {
       window.renderTopNav('tvshows');
       window.renderBottomNav('tvshows');
     });
-    window.addEventListener('eli6.langChanged', function () {
+    window.addEventListener('krmovies.langChanged', function () {
       renderPage();
     });
   });

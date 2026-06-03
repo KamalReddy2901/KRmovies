@@ -1,6 +1,6 @@
 {
-  "name": "ELI6 Movies — Live Sports",
-  "short_name": "ELI6 Live",
+  "name": "KRMovies — Live Sports",
+  "short_name": "KRMovies Live",
   "description": "Free live sports streams, scores, and schedules.",
   "start_url": "/live.html",
   "scope": "/",

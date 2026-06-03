@@ -1,4 +1,4 @@
-// ELI6 Movies — theme system
+// KRMovies — theme system
 // Replaces old dark/light only system. Manages Pulse + Marquee themes.
 
 window.THEMES = {
@@ -89,7 +89,7 @@ window.THEMES = {
   },
 };
 
-const PREFS_KEY = "eli6.prefs";
+const PREFS_KEY = "krmovies.prefs";
 
 const DEFAULT_PREFS = {
   theme:     "pulse",
@@ -162,7 +162,7 @@ window.applyTheme = function(themeKey, mode, accentIdx, density, radiusMode, fon
   r.dataset.theme = themeKey;
   r.dataset.mode  = mode;
 
-  document.dispatchEvent(new CustomEvent("eli6.themeChanged", { detail: { themeKey, mode, accentIdx, density, radiusMode, fontScale } }));
+  document.dispatchEvent(new CustomEvent("krmovies.themeChanged", { detail: { themeKey, mode, accentIdx, density, radiusMode, fontScale } }));
 };
 
 window.getPrefs   = loadPrefs;

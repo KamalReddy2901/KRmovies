@@ -1,4 +1,4 @@
-// ELI6 Movies — account page
+// KRMovies — account page
 (function () {
   var API_URL  = window.API_BASE_URL || '';
   var TMDB_IMG = 'https://image.tmdb.org/t/p/';
@@ -92,10 +92,10 @@
     cookieAnalytics: true,
   };
   function loadPrefs() {
-    try { return Object.assign({}, DEFAULT_PREFS, JSON.parse(localStorage.getItem('eli6.acctPrefs') || '{}')); }
+    try { return Object.assign({}, DEFAULT_PREFS, JSON.parse(localStorage.getItem('krmovies.acctPrefs') || '{}')); }
     catch (e) { return Object.assign({}, DEFAULT_PREFS); }
   }
-  function savePrefs(p) { localStorage.setItem('eli6.acctPrefs', JSON.stringify(p)); }
+  function savePrefs(p) { localStorage.setItem('krmovies.acctPrefs', JSON.stringify(p)); }
 
 
   async function apiPost(path, body) {
@@ -471,7 +471,7 @@
       var url  = URL.createObjectURL(blob);
       var a    = document.createElement('a');
       a.href   = url;
-      a.download = 'eli6-movies-data-' + new Date().toISOString().slice(0, 10) + '.json';
+      a.download = 'krmovies-data-' + new Date().toISOString().slice(0, 10) + '.json';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -777,7 +777,7 @@
     avatarEl.textContent = (user.username || 'E')[0].toUpperCase();
 
     // Apply cached picture instantly, then sync from server below
-    var cachedPic = localStorage.getItem('eli6.profilePicture') || '';
+    var cachedPic = localStorage.getItem('krmovies.profilePicture') || '';
     if (cachedPic) applyProfilePicture(avatarEl, cachedPic);
 
     avatarWrap.appendChild(avatarEl);
@@ -799,7 +799,7 @@
     }
     function openAvatarMenu() {
       if (avatarMenuEl) { closeAvatarMenu(); return; }
-      var hasPic = !!localStorage.getItem('eli6.profilePicture');
+      var hasPic = !!localStorage.getItem('krmovies.profilePicture');
       var menu = div('acc__avatar-menu');
 
       var uploadBtn = el('button', 'acc__avatar-menu-btn');
@@ -818,7 +818,7 @@
         removeBtn.disabled = true;
         try {
           await apiDelete('/user/profile-picture');
-          localStorage.removeItem('eli6.profilePicture');
+          localStorage.removeItem('krmovies.profilePicture');
           applyProfilePicture(avatarEl, '');
           showToast('Profile picture removed');
         } catch (e) {
@@ -849,7 +849,7 @@
         var dataUrl = await resizeImageToBase64(file, 300, 0.85);
         var result = await apiPut('/user/profile-picture', { data: dataUrl });
         var url = (result && result.profilePicture) || dataUrl;
-        localStorage.setItem('eli6.profilePicture', url);
+        localStorage.setItem('krmovies.profilePicture', url);
         applyProfilePicture(avatarEl, url);
         showToast('Profile picture updated!');
       } catch (e) {
@@ -913,10 +913,10 @@
       .then(function (d) {
         if (!d) return;
         var pic = d.profilePicture || '';
-        var cached = localStorage.getItem('eli6.profilePicture') || '';
+        var cached = localStorage.getItem('krmovies.profilePicture') || '';
         if (pic !== cached) {
-          if (pic) localStorage.setItem('eli6.profilePicture', pic);
-          else localStorage.removeItem('eli6.profilePicture');
+          if (pic) localStorage.setItem('krmovies.profilePicture', pic);
+          else localStorage.removeItem('krmovies.profilePicture');
           if (acc.isConnected) applyProfilePicture(avatarEl, pic);
         }
       })
@@ -1016,13 +1016,13 @@
         onClick: function () { window.location.href = 'mylist.html'; } },
       { icon: '⏱', label: 'Watch history', sub: wh.length + ' titles watched',
         onClick: function () { openWatchHistoryModal(wh); } },
-      { icon: '↗', label: 'Refer a friend', sub: "Share ELI6 — it's free",
+      { icon: '↗', label: 'Refer a friend', sub: "Share KRMovies — it's free",
         onClick: function () {
-          if (navigator.share) { navigator.share({ title: 'ELI6 Movies', url: window.location.origin }); }
+          if (navigator.share) { navigator.share({ title: 'KRMovies', url: window.location.origin }); }
           else { if (navigator.clipboard) navigator.clipboard.writeText(window.location.origin); showToast('Link copied!'); }
         }},
       { icon: '?', label: 'Help & support', sub: 'FAQs, contact',
-        onClick: function () { window.open('mailto:eli6movies@proton.me?subject=ELI6%20Movies%20Support', '_blank'); } },
+        onClick: function () { window.open('mailto:krmovies@proton.me?subject=KRMovies%20Support', '_blank'); } },
     ].forEach(function (q) {
       var tile = el('button', 'acc__quick-tile');
       var icon = div('acc__quick-icon'); icon.textContent = q.icon;
@@ -1160,7 +1160,7 @@
 
     var danger = div('acc__danger');
     var dangerInfo = div();
-    var dangerText = div('acc__danger-text'); dangerText.textContent = 'Sign out of ELI6';
+    var dangerText = div('acc__danger-text'); dangerText.textContent = 'Sign out of KRMovies';
     var dangerHint = div('acc__danger-hint'); dangerHint.textContent = "You'll need to sign in again to keep watching. Your list and history stay safe.";
     dangerInfo.appendChild(dangerText); dangerInfo.appendChild(dangerHint);
     var dangerActions = div('acc__danger-actions');
@@ -1189,7 +1189,7 @@
     if (getUser()) {
       var acc = div('acc');
       var phWrap = div();
-      phWrap.innerHTML = '<div class="pagehead"><div class="pagehead__eyebrow">' + tr('account.settings','Settings') + '</div><h1 class="pagehead__title">' + tr('account.title','Account') + '</h1><p class="pagehead__sub">Everything about you on ELI6 — what you\'ve watched, what\'s queued, and how the app looks and feels.</p></div>';
+      phWrap.innerHTML = '<div class="pagehead"><div class="pagehead__eyebrow">' + tr('account.settings','Settings') + '</div><h1 class="pagehead__title">' + tr('account.title','Account') + '</h1><p class="pagehead__sub">Everything about you on KRMovies — what you\'ve watched, what\'s queued, and how the app looks and feels.</p></div>';
       acc.appendChild(phWrap.firstChild);
       mount.appendChild(acc);
       renderAccountHub(acc);
@@ -1208,11 +1208,11 @@
     window.renderTopNav('account');
     window.renderBottomNav('account');
     renderPage();
-    document.addEventListener('eli6.themeChanged', function () {
+    document.addEventListener('krmovies.themeChanged', function () {
       window.renderTopNav('account');
       window.renderBottomNav('account');
     });
-    window.addEventListener('eli6.langChanged', function () { renderPage(); });
+    window.addEventListener('krmovies.langChanged', function () { renderPage(); });
   });
 
 })();

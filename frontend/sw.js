@@ -1,6 +1,6 @@
-// ELI6 Movies — minimal app-shell service worker
+// KRMovies — minimal app-shell service worker
 // Stale-while-revalidate for our own static assets; network-only for API + iframes.
-var CACHE_NAME = 'eli6-shell-v1';
+var CACHE_NAME = 'krmovies-shell-v1';
 var SHELL_ASSETS = [
   '/live.html',
   '/css/theme.css',

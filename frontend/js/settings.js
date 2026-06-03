@@ -1,4 +1,4 @@
-// ELI6 Movies — settings page logic
+// KRMovies — settings page logic
 // Reads/writes window.getPrefs() / window.setPref() from theme.js
 
 (function () {
@@ -43,7 +43,7 @@
 
     var pageSub = el("p");
     pageSub.style.cssText = "color:var(--fg-muted);font-size:14px;margin-top:8px";
-    pageSub.textContent = "Customise your ELI6 experience.";
+    pageSub.textContent = "Customise your KRMovies experience.";
     head.appendChild(pageSub);
     main.appendChild(head);
 
@@ -66,7 +66,7 @@
       var bar = div("settings__themecard-bar");
       var logoSpan = div("settings__themecard-logo");
       if (key === "pulse") {
-        logoSpan.innerHTML = "ELI<span>6</span>.";
+        logoSpan.innerHTML = "KRMovies";
       } else {
         logoSpan.textContent = "E·L·I·6";
       }
@@ -322,7 +322,7 @@
     buildPage();
     renderFooter("footer-mount");
 
-    document.addEventListener("eli6.themeChanged", function () {
+    document.addEventListener("krmovies.themeChanged", function () {
       renderTopNav("settings");
       renderBottomNav("settings");
     });

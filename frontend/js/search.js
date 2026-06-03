@@ -32,20 +32,20 @@
 
   function _saveSearch(q) {
     try {
-      var list = JSON.parse(localStorage.getItem('eli6.searches') || '[]');
+      var list = JSON.parse(localStorage.getItem('krmovies.searches') || '[]');
       list = [q].concat(list.filter(function (s) { return s !== q; })).slice(0, 8);
-      localStorage.setItem('eli6.searches', JSON.stringify(list));
+      localStorage.setItem('krmovies.searches', JSON.stringify(list));
     } catch (_) {}
   }
 
   function _getRecentSearches() {
-    try { return JSON.parse(localStorage.getItem('eli6.searches') || '[]'); } catch (_) { return []; }
+    try { return JSON.parse(localStorage.getItem('krmovies.searches') || '[]'); } catch (_) { return []; }
   }
 
   function _removeSearch(q) {
     try {
       var list = _getRecentSearches().filter(function (s) { return s !== q; });
-      localStorage.setItem('eli6.searches', JSON.stringify(list));
+      localStorage.setItem('krmovies.searches', JSON.stringify(list));
     } catch (_) {}
   }
 
@@ -682,11 +682,11 @@
       });
     }
 
-    document.addEventListener('eli6.themeChanged', function () {
+    document.addEventListener('krmovies.themeChanged', function () {
       window.renderTopNav('search');
       window.renderBottomNav('search');
     });
-    window.addEventListener('eli6.langChanged', function () {
+    window.addEventListener('krmovies.langChanged', function () {
       if (_currentQuery) doSearch(_currentQuery);
       else showDefaultContent();
     });

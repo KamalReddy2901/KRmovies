@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var API = (window.API_BASE_URL || 'https://eli6movies.onrender.com/api').replace(/\/+$/, '');
+    var API = (window.API_BASE_URL || 'https://krmovies.onrender.com/api').replace(/\/+$/, '');
 
     function sid() {
         var s = sessionStorage.getItem('_sid');

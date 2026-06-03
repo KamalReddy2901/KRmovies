@@ -8,7 +8,7 @@ let allUsers = [];
 let filteredUsers = [];
 let currentPage = 1;
 const USERS_PER_PAGE = 10;
-const API_BASE = window.API_BASE_URL || 'https://eli6movies.onrender.com/api';
+const API_BASE = window.API_BASE_URL || 'https://krmovies.onrender.com/api';
 
 function getCurrentUser() {
     const user = localStorage.getItem('user');

@@ -1,4 +1,4 @@
-// ELI6 Movies — home page logic
+// KRMovies — home page logic
 // Fetch layer preserved; render layer now uses components.js
 
 const AUTH_API_URL  = window.API_BASE_URL  || '';
@@ -291,13 +291,13 @@ document.addEventListener('DOMContentLoaded', async function () {
   await initPage();
 
   // Re-render nav on theme changes
-  document.addEventListener('eli6.themeChanged', function () {
+  document.addEventListener('krmovies.themeChanged', function () {
     renderTopNav('home');
     renderBottomNav('home');
   });
 });
 
 // Re-fetch all home page content in the new language when the user switches language
-window.addEventListener('eli6.langChanged', function () {
+window.addEventListener('krmovies.langChanged', function () {
   initPage();
 });

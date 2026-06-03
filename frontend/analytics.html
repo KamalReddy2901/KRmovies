@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Analytics — eli6movies</title>
+<title>Analytics — KRmovies</title>
 <script src="js/config.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -194,7 +194,7 @@ tr:hover td{background:var(--surface2)}
 
 <!-- Nav -->
 <nav class="nav">
-  <a class="nav-brand" href="index.html">← <span>eli6movies</span> / Analytics</a>
+  <a class="nav-brand" href="index.html">← <span>KRMovies</span> / Analytics</a>
   <div class="nav-center">
     <div class="range-tabs" id="rangeTabs">
       <button data-range="1d">24h</button>
@@ -228,7 +228,7 @@ tr:hover td{background:var(--surface2)}
 <script>
 'use strict';
 
-const API = (window.API_BASE_URL || 'https://eli6movies.onrender.com/api').replace(/\/+$/, '');
+const API = (window.API_BASE_URL || 'https://krmovies.onrender.com/api').replace(/\/+$/, '');
 let currentRange = '7d';
 let autoRefresh = true;
 let refreshTimer = null;
@@ -628,7 +628,7 @@ function exportCSV(){
   const csv=[headers.join(','),...rows].join('\n');
   const a=document.createElement('a');
   a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
-  a.download='eli6movies-analytics-'+currentRange+'.csv';
+  a.download='krmovies-analytics-'+currentRange+'.csv';
   a.click();
 }
 
@@ -696,7 +696,7 @@ function toggleAutoRefresh(){
 
 // ── UTM Builder ──────────────────────────────────────────────
 function buildUtm(){
-  const base=(document.getElementById('utmBase')||{}).value||'https://eli6movies.vercel.app';
+  const base=(document.getElementById('utmBase')||{}).value||'https://krmovies.vercel.app';
   const source=(document.getElementById('utmSource')||{}).value||'';
   const medium=(document.getElementById('utmMedium')||{}).value||'';
   const campaign=(document.getElementById('utmCampaign')||{}).value||'';
@@ -927,7 +927,7 @@ function renderShell(){
       <div class="utm-base-row" style="margin-top:12px">
         <div class="utm-field">
           <label>Base URL</label>
-          <input id="utmBase" placeholder="https://eli6movies.vercel.app" oninput="buildUtm()"/>
+          <input id="utmBase" placeholder="https://krmovies.vercel.app" oninput="buildUtm()"/>
         </div>
       </div>
       <div class="utm-grid">

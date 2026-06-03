@@ -1,4 +1,4 @@
-// ELI6 Movies — My List page (full redesign)
+// KRMovies — My List page (full redesign)
 (function () {
   'use strict';
 
@@ -551,7 +551,7 @@
     window.renderBottomNav('mylist');
     window.renderFooter('footer-mount');
 
-    document.addEventListener('eli6.themeChanged', function () {
+    document.addEventListener('krmovies.themeChanged', function () {
       window.renderTopNav('mylist');
       window.renderBottomNav('mylist');
     });
