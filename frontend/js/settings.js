@@ -68,7 +68,7 @@
       if (key === "pulse") {
         logoSpan.innerHTML = "KRMovies";
       } else {
-        logoSpan.textContent = "E·L·I·6";
+        logoSpan.textContent = "K·R·M·O·V·I·E·S";
       }
       var dots = div("settings__themecard-dots");
       dots.innerHTML = "<span></span><span></span><span></span>";

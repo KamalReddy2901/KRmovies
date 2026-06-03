@@ -82,11 +82,7 @@
     const left = el("div", "topnav__left");
     const logo = el("a", "topnav__logo");
     logo.href = "index.html";
-    if (theme === "marquee") {
-      logo.innerHTML = "E·L·I·<span class=\"b\">6</span>";
-    } else {
-      logo.innerHTML = "ELI<span class=\"b\">6</span>.";
-    }
+    logo.innerHTML = "KR<span class=\"b\">Movies</span>";
 
     const navLinks = el("div", "topnav__links");
     links.forEach(function (l) {
